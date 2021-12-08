@@ -106,7 +106,7 @@ const mapPropsData = (data: StencilJsonDocsProp[]): ArgTypes => {
   return (
     data &&
     data.reduce((acc, item) => {
-      acc[`prop-${item.name}`] = {
+      acc[item.name] = {
         name: item.attr ? item.attr : item.name,
         description: item.docs,
         type: { name: item.type, required: item.required },
