@@ -169,7 +169,7 @@ const mapGenericData = <T extends { name: string; docs: string }>(
     data &&
     data.reduce((acc, item) => {
       const type = { name: "void" };
-      acc[`${category}-${item.name}`] = {
+      acc[`${category.replace(/\s/g, '-').toLowerCase()}-${item.name}`] = {
         name: item.name,
         required: false,
         description: item.docs,
